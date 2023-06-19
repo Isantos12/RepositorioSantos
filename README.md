@@ -1,2 +1,2 @@
 # RepositorioSantos
-Repositorio para el poryecto Final Grado
+Repositorio para el proyecto Final de Grado

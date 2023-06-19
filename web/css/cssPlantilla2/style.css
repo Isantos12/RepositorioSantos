@@ -1,0 +1,638 @@
+:root { /*Esto son varibales donde guardo los oclores que voy a utilizar siempre en mi pagina*/
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #EBCB57;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+}
+
+/* Aqui comienzan las VARIABLES GLOBALES */
+
+/* BOX MODEL */
+*,
+*::before,
+*::after {
+    box-sizing: inherit; /*Quita la herencia al tamaño de las cajas "box"*/
+}
+
+a{
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    /* Hack para Box Model*/
+}
+
+/* Fin del box model */
+body {
+    font-size: 16px;
+    /* 1rem = 10px */
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, #DFE9F3 0%, var(--blanco) 80%); /*Aqui se hace el RGBA*/
+}
+
+/* TIPOGRAFIA */
+h1 {
+    font-size: 3.8rem;
+    margin: 1em 0;
+}
+
+h2 {
+    font-size: 2rem;
+    font-family: 'Bebas Neue', cursive;
+}
+
+h2 span{
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+/* Contenedor global */
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/* Botones */
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+
+}
+
+@media (min-width: 480px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+/* Fin botones */
+
+/* Sombra del fondo */
+.sombra {
+    /*Esto pertnece a una pagina para hacer las sombras del div del contenedor principal
+    Pagina: https://www.cssmatic.com/box-shadow */
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+/* FIN Variables Globales */
+
+header{
+    background-color: var(--blanco);
+    position: sticky;
+    top:0px;
+    z-index: 10;
+}
+
+
+#background2 {
+    display: grid;
+    grid-template-columns: 60% 20%;
+    column-gap: 3rem; /* es un margen para serparar las columnas del grid*/
+    place-content: center;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to bottom right,
+        #f973d2 0%,
+        #4DC2E8 20%,
+        #EBCB57 40%,
+        #4DE8D1 60%,
+        #f973d2 80%
+    );
+    background-position: center;
+    background-size: 200% 200%;
+    animation: movimiento 5s linear infinite alternate;
+}
+
+@keyframes movimiento {
+    from{
+        background-position: 0 0;
+    }
+
+    to{
+        background-position: 100% 100%;
+    }
+}
+
+
+.cajaTitulo{
+    width: 80%;
+    float: left;
+}
+
+/* TITULOS */
+.titulo span {
+    font-size: 2rem;
+}
+
+/* Utilidades */
+
+.w-sm-100{
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+}
+@media (min-width: 768px) {
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+/* Navegacion Principal  */
+.nav-bg {
+    background-color: #f973d2;
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-around;
+        
+    }
+}
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+
+/*Imagen Principal de la PAGINA + CUERPO entero de la pagina*/
+.cuerpoPrincipal {
+    background-image: url(../../img/imgPagina/vinilos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-cuerpoPrincipal {
+    position: absolute; /* Posicion Absoluta */
+    background-color: rgba(0, 0, 0, .7); /* RGBA */
+    /* anterior */
+    background-color: rgb(0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-cuerpoPrincipal h2,
+.contenido-cuerpoPrincipal p {
+    color: var(--blanco);
+}
+
+.contenido-cuerpoPrincipal .ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+
+/* LISTAS HechAs con GRIP*/
+
+@media (min-width: 768px) {
+    .servicios{
+        margin: 4px;
+        border: 2px solid black;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem; /* es un margen para serparar las columnas del grid*/
+    }
+}
+
+.cajadatos{
+    width: 50%;
+}
+
+.cajadatos p{
+    padding: 5px;
+    overflow: auto;
+    width: 100%;
+}
+
+.servicio{
+    padding: 4%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.servicio h3{
+
+    color: var(--secundario);
+    font-weight: 400;
+    margin-right: 40px;
+}
+
+.servicio p{
+    line-height: 2; /* interlineado*/
+    text-align: center;
+
+}
+.servicio .iconos{
+    height: 15rem;
+    width: 50%;
+    
+    display: flex; /* opera en una direccion*/
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cajaImagen{
+    height: 200px;
+    width: 200px;
+    border: 10px dashed #f973d2 ;
+}
+
+@media (max-width: 768px) {
+    .cajaImagen img{
+        height: 90px;
+        width: 90px;
+        background-color: #4DC2E8;
+        padding: 20%;
+    }
+
+    .cajaImagen{
+        height: 100px;
+        width: 100px;
+        border: 10px dashed #f973d2 ;
+    }
+}
+
+.cajaImagen img{
+    background-color: #4DC2E8;
+    padding: 20%;
+}
+
+.cajabotones{
+    position: relative;
+    float: right;
+
+    display: flex;
+    justify-content: space-evenly;
+    
+    width: 50%;
+    float: left;
+    padding-top: 70px;
+
+}
+
+.tituloCajaBotones{
+    position: absolute;
+    top: -5%;
+    background-color: pink;
+    border-radius: 10px;
+}
+.editar,
+.borrar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid red;
+    border-radius: 10px;
+    width: 70%;
+    height: 70%;
+}
+.editar img,
+.borrar img{
+    display: flex;
+    align-items: center;
+    float: left;
+    width: 35px;
+}
+
+/*Fin lISTAS*/
+
+
+/* FORMULARIO */
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%); /* Funcion que utiliza el valor mas pequeño */
+    border-radius: 2rem;
+    margin: 0 auto; /*utlizar cuando sea un formulario y no herede del padre un display flex*/
+    padding: 2rem;
+    
+}
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+/*Campos del formulario Hechos con GRIP*/
+.cajalogin{
+    margin: 5px;;
+    border: 2px solid black;
+    background-color: azure;
+    padding: 10px;
+    
+}
+
+@media (max-width: 963px) {
+    .cajalogin h3 {
+        font-size: 10px;
+        word-wrap: break-word; /* Permite dividir en varias líneas */
+        white-space: normal; /* Controla los espacios en blanco */
+    }
+}
+
+
+.form-control{
+    background-color: #0097A7;
+    margin-bottom: 10px;
+    color: #ffffff;
+    width: 100%;
+    border: 2px dotted black;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+.cajalogin a{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: small;
+    text-decoration:none;
+}
+
+.cajalogin span{
+    color: #212121;
+    font-weight: bold;
+    font-size: medium;
+}
+.form-control::placeholder{
+    color: #ffffff;
+}
+
+.cajalogin .btnForm{
+    position: relative;
+    left: 80px;
+    background-color: #EBCB57;
+    margin-bottom: 10px;
+}
+    
+
+/*Footer*/
+.footer{
+    text-align: center;
+}
+
+
+
+
+
+
+/* CSS PAGINA vista_listas*/
+.contenedorMisListas {
+    background-color: #DFE9F3;
+    margin: 2%;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .playlist-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 1%;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .imagen-playlist {
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .imagen-playlist img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .info-tabla-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-playlist {
+    background-color: #EBCB57;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .tabla {
+    margin: 10px;
+    max-height: 200px;
+    overflow: auto;
+  }
+  
+  .tablaCanciones {
+    width: 100%;
+  }
+  
+  .titulo {
+    margin-top: 2%;
+    text-align: center;
+  }
+  
+  .cajaInsertarCancion {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    text-align: center;
+    color: black;
+    background-color: #ccc;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid red;
+    border-radius: 50px;
+    margin-top: 10px;
+  }
+  
+
+
+
+
+
+  /*ZONA ADMIN*/
+  .cajaAdmin{
+    border: 2px solid rebeccapurple;
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+
+  }
+/*Para modal*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+/*CSS mislistas.php*/
+/* Estilos para el contenedor principal */
+.cajaMisListas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para la imagen de la lista */
+  .cajaMisListas img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  /* Estilos para los detalles de la lista */
+  .detalles {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  
+  .detalles h2 {
+    font-size: 2rem;
+  }
+  
+  .detalles h4 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  .detalles p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para el botón de volver */
+  .btn-info {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  

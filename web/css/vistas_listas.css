@@ -1,0 +1,53 @@
+/* Aqui comienzan las VARIABLES GLOBALES */
+
+/* BOX MODEL */
+*,
+*::before,
+*::after {
+    box-sizing: inherit; /*Quita la herencia al tamaño de las cajas "box"*/
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    /* Hack para Box Model*/
+}
+
+/* Fin del box model */
+body {
+    font-size: 16px;
+    /* 1rem = 10px */
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, #DFE9F3 0%, var(--blanco) 80%); /*Aqui se hace el RGBA*/
+}
+
+.caja {
+    margin-top: 50px;
+    background-color: white;
+    text-align: center;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.cajaImagenPlaylist{
+    width: 20%;
+    position: relative;
+    left: 10%;
+    border: 2px solid black;
+}
+
+.infoPlaylist{
+    width: 40%;
+    border: 2px solid red;
+    position: relative;
+    left: 40%;
+    top: -120px;
+}
+
+.tablaCanciones{
+    border: 2px solid blue;
+    width: 40%;
+    position: relative;
+    left: 40%;
+    top: -100px;
+}
